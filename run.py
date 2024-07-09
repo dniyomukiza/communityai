@@ -189,7 +189,6 @@ def contact():
             body = f"First name: {form.firstName.data} \n Last name:  {form.lastName.data} \n Phone: {form.phone.data}\n Email:  {form.email.data}\n Message: {form.message.data}"
             message = MIMEMultipart()
             message['From'] =form.email.data
-            #message['To'] = '9373443084'
             message['Subject'] = subject
             message.attach(MIMEText(body, 'plain'))
 
