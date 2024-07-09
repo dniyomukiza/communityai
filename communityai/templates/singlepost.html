@@ -1,0 +1,35 @@
+{% extends "parent.html" %}
+{% block content %}
+<div style="margin-bottom: 20px;">
+
+    <div style="display: flex; margin-bottom: 20px;">
+        
+        <div style="flex: 1; margin-right: 20px;">
+            <div style="padding: 10px; margin-bottom: 10px;">
+                
+                <h2 style="font-size: 24px; margin-bottom: 10px;">
+                {% if post.author == current_user %}
+                <div>
+                    <a href="{{ url_for('update2', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Update Post</a>
+                    <a href="{{ url_for('delete_post', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Delete Post</a>
+                </div>
+                {% endif %}
+                  <p>{{ post.title }}</p>
+                </h2>
+                <p style="font-size: 16px; margin-bottom: 10px;">{{ post.content }}</p>
+            </div>
+        </div>
+      
+    </div>
+   
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+  
+

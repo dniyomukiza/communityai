@@ -1,0 +1,42 @@
+{% extends "parent.html" %}
+{% block content %}
+<div class="image-container">
+    <div class="image-box">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/staff.css') }}">
+        <a href="{{ url_for('bios') }}">
+            <img src="{{ url_for('static', filename='/images/didier.png') }}" alt="Image1">
+          </a>
+       
+        <p>
+            <a href="{{url_for('bios')}}" style="text-decoration: none; color:rgb(66, 119, 103);">Didier Niyomukiza</a><br>
+            Founder
+        </p>
+        
+       
+    </div>
+    <div class="image-box">
+        <a href="{{ url_for('semg') }}">
+            <img src="{{ url_for('static', filename='/images/semg.png') }}" alt="Image 3">
+          </a>
+        <p>
+            <a href="{{ url_for('semg') }}" style="text-decoration: none; color: rgb(66, 119, 103);">Yves Semana Gisubizo</a><br>
+            Software Engineer
+        </p>
+    </div>
+
+<div class="image-box">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/staff.css') }}">
+        <a href="{{ url_for('fidele') }}">
+            <img src="{{ url_for('static', filename='/images/fidele.jpg') }}" alt="Image3">
+          </a>
+
+        <p>
+            <a href="{{url_for('fidele')}}" style="text-decoration: none; color:rgb(66, 119, 103);">Fidele Cyiza</a><br>
+            Software & Generative AI Engineer
+        </p>
+
+
+    </div>
+</div>
+{% endblock %}
+

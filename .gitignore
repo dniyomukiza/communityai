@@ -1,0 +1,5 @@
+/venv/
+instance
+web_logs.txt
+aikey.py
+__pycache__

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #02b2d9;">
+  <div class="container-fluid">
+    <img src="{{ url_for('static', filename='/images/logo.png') }}" alt="profile" style="width: 100px; height: auto; border-radius: 20%;">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('about')}}">About </a>
+          <a class="nav-link" href="{{url_for('home')}}">Home</a>
+          <a class="nav-link" href="{{url_for('blogs')}}">Blogs</a>
+          <a class="nav-link" href="{{url_for('staff')}}">Team</a>
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>

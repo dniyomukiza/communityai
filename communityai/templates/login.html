@@ -1,0 +1,15 @@
+{%extends "parent.html"%}
+{%block content%}
+      <h1>Login</h1>
+      <form method="POST" action="">
+            {{ form.csrf_token }}
+            {{ form.hidden_tag()}}
+            {{ form.username}}
+            {{ form.password}}
+            {{form.submit }}
+
+      </form>
+      <a href="{{url_for('register')}}"> No account? sign up</a>
+
+
+{%endblock content%}
