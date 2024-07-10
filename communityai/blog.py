@@ -15,7 +15,8 @@ db=SQLAlchemy()
 app=Flask(__name__)# initiliaze app and configure the secret key
 bcrypt=Bcrypt(app)
 app.app_context().push()
-
+login_manager=LoginManager()
+login_manager.init_app(app)
 def create_app():
     app=Flask(__name__)
     app.config['DEBUG'] = True
@@ -24,8 +25,6 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db=SQLAlchemy(app)# initialize database
     db.init_app(app)
-    login_manager=LoginManager()
-    login_manager.init_app(app)
 
     return app
 # class reprenting user on database
