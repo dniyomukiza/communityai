@@ -23,7 +23,7 @@ def create_app():
     app.config["SECRET_KEY"]="9866115a575103d99e14da62c83239d18867f0e3138ba2966c6720e73dce1224"
     app.config['SQLALCHEMY_DATABASE_URI']= os.environ.get("DATAI_DB")#'sqlite:///users.db
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    db=SQLAlchemy(app)# initialize database
+    #db=SQLAlchemy(app)# initialize database
     db.init_app(app)
 
     return app
