@@ -1,2 +1,2 @@
-from technow.blog import create_app
+from technow import create_app
 app=create_app()
