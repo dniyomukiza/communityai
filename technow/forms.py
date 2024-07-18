@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask import flash
 from datetime import datetime
 from .models import User
-from wtforms import StringField, PasswordField, SubmitField,TextAreaField
+from wtforms import StringField, PasswordField, SubmitField,TextAreaField,BooleanField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, Regexp,ValidationError
 
 
@@ -19,6 +19,7 @@ class RegistrationForm(FlaskForm):
 class LoginForm(FlaskForm):
     username=StringField(validators=[DataRequired()],render_kw={"placeholder":"Username"})
     password=StringField(validators=[DataRequired(),Length(min=2,max=20)],render_kw={"placeholder":"Password"})
+    remember_me = BooleanField('Remember Me') 
     submit=SubmitField('Login')
 
 class ContactForm(FlaskForm):

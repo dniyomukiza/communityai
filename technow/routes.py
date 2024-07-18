@@ -66,8 +66,9 @@ def login():
     if form.validate_on_submit():
         user=User.query.filter(User.username==form.username.data).first()
         if user and user.password==form.password.data:
-            login_user(user)
-            flash('You are in! Create title and blog then post it')
+            remember_me = form.remember_me.data  
+            login_user(user, remember=remember_me)
+            flash('You are in! Create blog')
             return redirect(url_for('main.blogpost'))
         flash("Password does not match!")
     return render_template("login.html",title='Login',form=form)
@@ -116,7 +117,7 @@ def update(post_id):
      return render_template("singlepost.html",title=post.title, post=post)
 
 @main.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def update2(post_id):
     log_web_visit()
     post = Post.query.get_or_404(post_id)
@@ -136,7 +137,7 @@ def update2(post_id):
     return render_template("blogpost.html", title="Update Post", form=form, legend="Update your blog")
 
 @main.route("/post/<int:post_id>/delete", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:

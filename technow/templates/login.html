@@ -1,15 +1,28 @@
-{%extends "parent.html"%}
-{%block content%}
-      <h1>Login</h1>
-      <form method="POST" action="">
-            {{ form.csrf_token }}
-            {{ form.hidden_tag()}}
-            {{ form.username}}
-            {{ form.password}}
-            {{form.submit }}
-
-      </form>
-      <a href="{{url_for('register')}}"> No account? sign up</a>
-
-
-{%endblock content%}
+{% extends "parent.html" %}
+{% block content %}
+    <h1>Login</h1>
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        
+        <div class="form-row">
+            <div class="form-group col">
+                {{ form.username(class="form-control", placeholder="Username") }}
+            </div>
+            <div class="form-group col">
+                {{ form.password(class="form-control", placeholder="Password") }}
+            </div>
+            <div class="form-group col">
+                {{ form.submit(class="btn btn-primary btn-block") }}
+            </div>
+        </div>
+        
+        <div class="form-group form-check">
+            {{ form.remember_me(class="form-check-input") }}
+            {{ form.remember_me.label(class="form-check-label", style="margin-left: 5px;") }}
+        </div>
+    </form>
+    
+    <a href="{{ url_for('main.register') }}">No account? Sign up</a>
+{% endblock %}
+ß
