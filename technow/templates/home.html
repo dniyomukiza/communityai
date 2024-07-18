@@ -1,28 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI People's DB</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/parent.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
 <div class="container">
     {% extends "parent.html" %}
 
     {% block content %}
-
-    <div id="demo1">
-        <h4>AI People's DB</h4>
-        <p>Lately, I have been thinking of the idea of “people's database” thanks to the recent AI releases from big tech. That database would eliminate a need of learning a SQL language to be able to interact with SQL even the NoSQL database. This does not mean that SQL knowledge won’t have value anymore, the point is that you could still be productive without it (at least for the most basic database operations I was able to test).</p>
-        <h6>The tools you need</h6>
-        <p>For the sake of testing, I just used a simple database Sqlite3, Gemini API, and a few lines of code to create 5 records into the database I want to test using natural language. This demo is limited to the most simplistic tasks such as deleting, updating, inserting, and data retrieval from your backend data store. So, the initial database had 5 entries I randomly picked.</p>
-        <p><img src="{{ url_for('static', filename='images/peopledb/five.png') }}" alt="Image1" style="max-width: 70%; height: 50%;"></p>
-        <p> I started with retrieving the data for the database using human language instead of SQL language, and I got results I wanted.</p>
-        <p><img src="{{ url_for('static', filename='images/peopledb/select.png') }}" alt="Image1" style="max-width: 70%; height: 50%;"></p>
-        <p>Next, I prompted a bot to make changes to the database and commit all those changes.The intent was to update John Doe's age. </p>
-        <p><img src="{{ url_for('static', filename='images/peopledb/update.png') }}" alt="Image1" style="max-width: 100%; height: 50%;"></p>
-        <p>Also, I could inser a new student(James Day) to the database</p>
-        <p><img src="{{ url_for('static', filename='images/peopledb/insert.png') }}" alt="Image1" style="max-width: 70%; height: 50%;"></p>
-        <p>Finally, I asked that the new student gets removed from the database and that happened as well. </p>
-        <p><img src="{{ url_for('static', filename='images/peopledb/remove.png') }}" alt="Image1" style="max-width: 70%; height: 50%;"></p>
-        <h6>Conclusion</h6>
-        <p>The concept of an "AI people's DB" presents an intriguing possibility for simplifying database interactions through natural language processing and AI technologies. By eliminating the need for complex SQL syntax, such a system could democratize access to database management, enabling users to interact with data using everyday language. Next time we will see how we could visualize the data, do analysis and possibly incorporate some privacy and security safeguards for that data.</p>
-
+    <div class="articles-container">
+        <div class="article">
+            <h4>Retrieval Augmented Generation Database</h4>
+            <p>Lately, I have been thinking the possibility of database operations without SQL language, getting inspiration from RAG. That database would eliminate a need of learning a SQL language to be able to interact with relational and the NoSQL databases. This does not mean that SQL knowledge won’t have value anymore, the point is that you could still be productive using just natural langage (at least for the most basic database operations I was able to test).</p>
+            
+            <h4>The tools you need</h4>
+            <p>For the sake of testing, I just used a simple database Sqlite3, Gemini API, and a few lines of code to create 5 records into the database I want to test using natural language. This demo is limited to the most simplistic tasks such as deleting, updating, inserting, and data retrieval from your backend data store. So, the initial database had 5 entries I randomly picked.</p>
+            <p><img src="{{ url_for('static', filename='images/peopledb/five.png') }}" alt="Image1"></p>
+            <p> I started with retrieving the data for the database using human language instead of SQL language, and I got results I wanted.</p>
+            <p><img src="{{ url_for('static', filename='images/peopledb/select.png') }}" alt="Image1"></p>
+            <p>Next, I prompted a bot to make changes to the database and commit all those changes. The intent was to update John Doe's age.</p>
+            <p><img src="{{ url_for('static', filename='images/peopledb/update.png') }}" alt="Image1"></p>
+            <p>Also, I could insert a new student (James Day) to the database</p>
+            <p><img src="{{ url_for('static', filename='images/peopledb/insert.png') }}" alt="Image1"></p>
+            <p>Finally, I asked that the new student gets removed from the database and that happened as well.</p>
+            <p><img src="{{ url_for('static', filename='images/peopledb/remove.png') }}" alt="Image1"></p>
+            <h6>Conclusion</h6>
+            <p>The concept of an "AI people's DB" presents an intriguing possibility for simplifying database interactions through natural language processing and AI technologies. By eliminating the need for complex SQL syntax, such a system could democratize access to database management, enabling users to interact with data using everyday language. Next time we will see how we could visualize the data, do analysis and possibly incorporate some privacy and security safeguards for that data.</p>
+        </div>
+        <div class="article">
+          
+        </div>
+        <div class="article">
+            
+        </div>
     </div>
-   <!--  <div id="demo2">
-    {% include 'prompt.html' %}
-    </div>
--->    {% endblock %}
+    {% endblock %}
 </div>
+</body>
+</html>

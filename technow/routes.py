@@ -66,12 +66,31 @@ def login():
     if form.validate_on_submit():
         user=User.query.filter(User.username==form.username.data).first()
         if user and user.password==form.password.data:
-            remember_me = form.remember_me.data  
+            remember_me = form.remember_me.data
             login_user(user, remember=remember_me)
             flash('You are in! Create blog')
+            print(f"User {user.username} logged in with remember_me={remember_me}")
             return redirect(url_for('main.blogpost'))
         flash("Password does not match!")
     return render_template("login.html",title='Login',form=form)
+
+@main.route("/blogpost",methods=['GET','POST'])
+@login_required
+def blogpost():
+    log_web_visit()
+    form = PostForm()
+    if form.validate_on_submit():
+        post=Post(title=form.title.data,content=form.content.data,author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash("Your post has been created!")
+        return redirect(url_for('main.home'))
+    return render_template("blogpost.html",title="New Post",form=form)
+
+@main.errorhandler(401)
+def unauthorized(error):
+    flash("You are not currently logged in")
+    return redirect(url_for('main.login'))    
 
 @main.route("/blogs",methods=['GET','POST'])
 def blogs():
@@ -87,28 +106,10 @@ def logout():
     flash("You are logged out")
     return redirect(url_for('main.login'))
 
-@main.errorhandler(401)
-def unauthorized(error):
-    flash("You are not currently logged in")
-    return redirect(url_for('main.login'))    
-
 @main.route('/curr')
 @login_required
 def curr_user():
     return 'current user is '+current_user.username
-
-@main.route("/blogpost",methods=['GET','POST'])
-@login_required
-def blogpost():
-    log_web_visit()
-    form = PostForm()
-    if form.validate_on_submit():
-        post=Post(title=form.title.data,content=form.content.data,author=current_user)
-        db.session.add(post)
-        db.session.commit()
-        flash("Your post has been created!")
-        return redirect(url_for('main.home'))
-    return render_template("blogpost.html",title="New Post",form=form)
 
 @main.route("/post/<int:post_id>")
 def update(post_id):
@@ -179,7 +180,6 @@ def contact():
         form.email.data = ''
         form.message.data = ''  
     return render_template("contact.html",form=form)
-
 
 def delete_users(user_ids=None, usernames=None, emails=None):
     query = User.query

@@ -1,19 +1,36 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #02b2d9;">
-  <div class="container-fluid">
-    <img src="{{ url_for('static', filename='/images/logo.png') }}" alt="profile" style="width: 100px; height: auto; border-radius: 20%;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website Title</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link" href="{{url_for('main.about')}}">About </a>
-          <a class="nav-link" href="{{url_for('main.home')}}">Home</a>
-          <a class="nav-link" href="{{url_for('main.blogs')}}">Blogs</a>
-          <a class="nav-link" href="{{url_for('main.staff')}}">Team</a>
-        </li> 
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('main.about') }}">About</a></li>
+        <li><a href="{{ url_for('main.home') }}">Home</a></li>
+        <li><a href="{{ url_for('main.blogs') }}">Blogs</a></li>
+        <li><a href="{{ url_for('main.staff') }}">Team</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
+
+<main>
+  <!-- Your main content here -->
+</main>
+
+<footer>
+  <!-- Footer content if needed -->
+</footer>
+
+</body>
+</html>

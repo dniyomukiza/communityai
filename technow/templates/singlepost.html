@@ -10,8 +10,8 @@
                 <h2 style="font-size: 24px; margin-bottom: 10px;">
                 {% if post.author == current_user %}
                 <div>
-                    <a href="{{ url_for('update2', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Update Post</a>
-                    <a href="{{ url_for('delete_post', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Delete Post</a>
+                    <a href="{{ url_for('main.update2', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Update Post</a>
+                    <a href="{{ url_for('main.delete_post', post_id=post.id) }}" style="display: inline-block; padding: 10px 20px; background-color: #923232; color: #fff; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Delete Post</a>
                 </div>
                 {% endif %}
                   <p>{{ post.title }}</p>
