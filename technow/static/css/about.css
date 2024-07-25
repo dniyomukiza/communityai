@@ -1,32 +1,36 @@
-/* Styles for the main content */
-h1 {
-    font-size: 15px;
-    margin-top:10px;
-    margin-bottom: 10px;
-    text-align: center; /* Align titles to the center */
+
+.content-container {
+    background-color: whitesmoke;
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 10px; 
 }
 
-/* Remove underline from h1 */
 h1 {
-    border-bottom: none; /* Remove underline */
+    font-size: 15px; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    text-align: center;
+    border-bottom: none
 }
 
 p {
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    border: 1px solid #ccc; /* Add border around paragraphs */
-    padding: 10px; /* Add padding around paragraphs */
-    border-radius: 10px; /* Add rounded corners to paragraphs */
-    margin-left: 10px; /* Add left margin */
+    line-height: 1.0;
+    margin-bottom: 5px;
+    padding: 10px; 
+  
 }
 
 ol {
     list-style-type: decimal;
     margin-left: 20px;
-    border: 1px solid #ccc; /* Add border around the list */
-    padding: 10px; /* Add padding around the list */
-    border-radius: 10px; /* Add rounded corners to the list */
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    
 }
 
 li {
@@ -35,3 +39,8 @@ li {
     margin-bottom: 10px;
 }
 
+body {
+    border-radius: 10px; 
+    overflow: hidden; 
+   
+}

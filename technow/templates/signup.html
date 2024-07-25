@@ -1,6 +1,7 @@
 {%extends "parent.html"%}
 {%block content%}
-      <p>You must sign up or log in to create blog posts </p>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+      <p>Sign up to create blog post </p>
       <form method="POST" action="">
             {{ form.hidden_tag()}}
             {{ form.username}}

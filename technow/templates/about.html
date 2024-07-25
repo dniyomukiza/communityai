@@ -1,18 +1,22 @@
-
-{%extends "parent.html"%}
-{%block content%}
-<h1>Who We Are</h1>
+{% extends "parent.html" %}
+{% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
-<p> 
-    We are a collective of global AI enthusiasts committed to leveraging the existing AI systems to help community based organizations address their challenges. By doing so, we can contribute to bridge parities that currently exist between AI and communities around the globe in terms of knowledge, access, and usage. Whether you come from a background in computer science, mathematics, psychology, linguistics, chemistry,philosophy, or you have curiosity, there are many ways to contribute to the advancement of AI.
-</p>
 
-<h1>Why  DatAI Equity Alliance(D.E.A)</h1>
-<p> 
-    Governments worldwide are crafting thorough national strategies aimed at fostering inclusive, responsible and equitable AI development. Meanwhile, Silicon Valley continues to unveil AI-powered tools, and businesses are swiftly integrating AI to their operations. However, there's a notable disparity between the rapid advancement of AI systems and the slower pace at which ordinary citizens are benefiting from this exciting new tech era. Consequently, there's a pressing need to engage with the public about the benefits of AI on a personal or through organizations that serve them directly. DatAI Equity Alliance, we position ourselves to support organizations’ initiatives to preserve data, integrate AI in their workflows and partnering with them in educating the citizens.
-</p>
-<h1>Mission</h1>
-<p>
-    Our mission is to empower civic organizations and communities they serve through AI education and its practical application in real-world scenarios.
-</p>
-{%endblock content%}
+<div class="content-container">
+    <h1>Who We Are</h1>
+    <p>
+        We are enthusiasts committed to addressing AI disparities that exist in our communities in terms of knowledge, access, and usage. No matter which background you come from, there are many ways to contribute to the advancement of AI.
+    </p>
+
+    <h1>Why This Initiative?</h1>
+    <p>
+        There's a notable disparity between the rapid advancement of AI systems and the pace at which ordinary citizens are adapting. Consequently, there's a pressing need to engage with the public about AI.
+    </p>
+
+    <h1>Mission</h1>
+    <p>
+        Our mission is to empower communities through AI education and its application in real-world scenarios.
+    </p>
+</div>
+{% endblock content %}
+

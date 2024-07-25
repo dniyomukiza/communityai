@@ -1,13 +1,12 @@
 {% extends "parent.html" %}
 {% block content %}
 <div style="margin-bottom: 20px;">
-    
-    <div style="border: 1px solid black; padding: 10px; width: fit-content;">
-        <a href="{{ url_for('main.logout') }}" style="display: block; text-decoration: none; color:rgb(33, 158, 120);">Logout</a>
-        <a href="{{ url_for('main.contact') }}" style="display: block; text-decoration: none; color: rgb(33, 158, 120);">Contact us</a>
-        <a href="{{ url_for('main.login') }}" style="display: block; text-decoration: none; color:rgb(33, 158, 120);">Create your blog</a>
-    </div>
- 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogs.css') }}">
+    <body>
+        <div class="button-container">
+            <a href="{{ url_for('main.logout') }}" class="btn">Logout</a>
+            <a href="{{ url_for('main.login') }}" class="btn">Create Blog</a>
+        </div>
     {% for i in range(0, posts|length, 2) %}
     <div style="display: flex; margin-bottom: 20px;">
         {% for post in posts[i:i+2] %}
