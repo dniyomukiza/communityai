@@ -1,19 +1,14 @@
 {% extends "parent.html" %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-<strong><p> Please fill out this form for any inquiries.</p></strong>
+<strong><p> Please fill out this form for any inquiries</p></strong>
 <form method="POST" action="" class="login-container">
     {{ form.csrf_token }}
     {{ form.hidden_tag() }}
-    {{ form.firstName.label }}
     {{ form.firstName(class="form-input") }}
-    {{ form.lastName.label }}
     {{ form.lastName(class="form-input") }}
-    {{ form.email.label }}
     {{ form.email(class="form-input") }}
-    {{ form.phone.label }}
     {{ form.phone(class="form-input") }}
-    {{ form.message.label }}
     {{ form.message(class="form-input") }}
     {{ form.submit(class="btn") }}
 </form>
