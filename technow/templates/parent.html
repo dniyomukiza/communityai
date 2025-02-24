@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}technow{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/parent.css') }}">
+
+  <!-- Include CKEditor -->
+  {% block head %}
+    {{ ckeditor.load() }}  <!-- This will load CKEditor resources -->
+  {% endblock %}
 </head>
 <body>
 
@@ -21,13 +26,12 @@
         <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
       </ul>
     </nav>
-  
 </header>
 
 <main class="content">
-    
     {% block content %}{% endblock %}
 </main>
 
 </body>
 </html>
+

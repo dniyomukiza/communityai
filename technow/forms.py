@@ -4,6 +4,7 @@ from datetime import datetime
 from .models import User
 from wtforms import StringField, PasswordField, SubmitField,TextAreaField,BooleanField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, Regexp,ValidationError
+from flask_ckeditor import CKEditorField
 
 
 class RegistrationForm(FlaskForm):
@@ -33,5 +34,5 @@ class ContactForm(FlaskForm):
 #delete_users(user_ids=[1,2,3,4,5,6,7,8])
 class PostForm(FlaskForm):
     title=StringField("Title",validators=[DataRequired()],render_kw={"placeholder":"Blog Title"})
-    content=TextAreaField("Content",validators=[DataRequired()],render_kw={"placeholder":"Type or Paste Blog Content"})
+    content = CKEditorField('Contenti')
     submit=SubmitField('Post')

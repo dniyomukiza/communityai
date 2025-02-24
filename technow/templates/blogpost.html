@@ -4,9 +4,11 @@
         <legend>{{ legend }}</legend>
             {{ form.hidden_tag()}}
             {{ form.title}}
-            {{ form.content}}
+            {{ form.content | safe}}
             {{form.submit }}
+          
       </form>
-
+      {{ ckeditor.load() }}
+      {{ ckeditor.config(name='content') }}
 
 {%endblock content%}

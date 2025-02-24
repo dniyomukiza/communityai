@@ -4,3 +4,4 @@ web_logs.txt
 aikey.py
 __pycache__
 .DS_Store
+.env

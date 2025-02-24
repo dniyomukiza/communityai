@@ -20,7 +20,7 @@
                 <h2 style="font-size: 24px; margin-bottom: 10px;">
                     <a href="{{ url_for('main.update',post_id=post.id) }}"style="color: rgb(70, 24, 24); text-decoration: none;">{{ post.title }}</a>
                 </h2>
-                <p style="font-size: 16px; margin-bottom: 10px;">{{ post.content }}</p>
+                <p style="font-size: 16px; margin-bottom: 10px;">{{ post.content | safe }}</p>
             </div>
         </div>
         {% endfor %}
