@@ -6,9 +6,8 @@
   <title>{% block title %}technow{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/parent.css') }}">
 
-  <!-- Include CKEditor -->
   {% block head %}
-    {{ ckeditor.load() }}  <!-- This will load CKEditor resources -->
+  {{ ckeditor.load(pkg_type="full") }}  
   {% endblock %}
 </head>
 <body>
